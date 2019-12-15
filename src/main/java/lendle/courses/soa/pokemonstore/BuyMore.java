@@ -30,18 +30,9 @@ static{
     public static void main(String[] args){
         // TODO code application logic here
         try(Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/pokemonstore?characterEncoding=utf8", "pokemon", "pokemon")){
-            conn.setAutoCommit(false);
-            PreparedStatement pstmt=conn.prepareStatement("insert into order_detail  (`pokemon_id`, `amount`, `order_id`) VALUES (?,?,?)");
-            pstmt.setInt(1, 6);
-            pstmt.setInt(2, 1);
-            pstmt.setInt(3, 2);
-            pstmt.executeUpdate();
+            //amy 想多買 6，7 這兩隻寶可夢，使用 transaction 及 prepared statement 新增這兩隻寶可夢
+            //到她本來的訂單 (order_id=2)
             
-            pstmt.setInt(1, 7);
-            pstmt.setInt(2, 2);
-            pstmt.setInt(3, 2);
-            pstmt.executeUpdate();
-            conn.commit();
         } catch (SQLException ex) {
             Logger.getLogger(ListPokemons.class.getName()).log(Level.SEVERE, null, ex);
         }

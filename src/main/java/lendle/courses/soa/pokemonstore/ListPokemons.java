@@ -31,11 +31,9 @@ public class ListPokemons {
     public static void main(String[] args){
         // TODO code application logic here
         try(Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/pokemonstore?characterEncoding=utf8", "pokemon", "pokemon")){
-            Statement stmt=conn.createStatement();
-            ResultSet rs=stmt.executeQuery("select * from pokemon order by price");
-            while(rs.next()){
-                System.out.println(rs.getString("name")+", "+rs.getDouble("price"));
-            }
+            
+            //寫出程式，按照售價排序，列出所有的 pokemon (15%)
+           
         } catch (SQLException ex) {
             Logger.getLogger(ListPokemons.class.getName()).log(Level.SEVERE, null, ex);
         }
