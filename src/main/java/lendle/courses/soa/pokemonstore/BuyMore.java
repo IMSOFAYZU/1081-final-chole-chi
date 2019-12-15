@@ -31,7 +31,7 @@ static{
         // TODO code application logic here
         try(Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/pokemonstore?characterEncoding=utf8", "pokemon", "pokemon")){
             //amy 想多買 6，7 這兩隻寶可夢，使用 transaction 及 prepared statement 新增這兩隻寶可夢
-            //到她本來的訂單 (order_id=2)
+            //到她本來的訂單 (order_id=2) (20%)
             
         } catch (SQLException ex) {
             Logger.getLogger(ListPokemons.class.getName()).log(Level.SEVERE, null, ex);

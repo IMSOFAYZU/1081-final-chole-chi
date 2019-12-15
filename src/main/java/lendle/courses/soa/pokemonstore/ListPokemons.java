@@ -32,7 +32,7 @@ public class ListPokemons {
         // TODO code application logic here
         try(Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/pokemonstore?characterEncoding=utf8", "pokemon", "pokemon")){
             
-            //寫出程式，按照售價排序，列出所有的 pokemon (15%)
+            //寫出程式，按照售價排序，列出所有的 pokemon (20%)
            
         } catch (SQLException ex) {
             Logger.getLogger(ListPokemons.class.getName()).log(Level.SEVERE, null, ex);
